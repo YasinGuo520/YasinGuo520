@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>郭岳兴 Yasin · 决策不靠感觉 | 18年实操老兵 · AI 商业化系统</title>
+  <meta name="description" content="18 年一线电商操盘手，连续多年完成 5000 万销售目标。以理性的红蓝对抗决策体系与 AI Agent 架构，帮创业者少踩坑。" />
+
+  <!-- 字体资源 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Plus Jakarta Sans"', '"PingFang SC"', 'sans-serif'],
+            mono: ['"SF Mono"', '"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            apple: {
+              black: '#000000',
+              dark: '#0a0a0c',
+              card: '#121215',
+              border: 'rgba(255, 255, 255, 0.1)',
+              cyan: '#38bdf8',
+              blue: '#2563eb',
+              rose: '#f43f5e',
+              purple: '#c084fc',
+              amber: '#fbbf24',
+              emerald: '#34d399',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ═══ Apple 官方旗舰级多彩光影体系 ═══ */
+    body {
+      background-color: #000000;
+      color: #f5f5f7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      selection-background-color: rgba(56, 189, 248, 0.35);
+    }
+
+    /* 炫彩极光渐变字 (Apple Intelligence Gradient) */
+    .gradient-text-aurora {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 30%, #c084fc 60%, #fb7185 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-cyan-blue {
+      background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-emerald {
+      background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* 苹果超大圆角拆解视窗大卡 */
+    .apple-breakdown-card {
+      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, rgba(18, 18, 22, 0.8) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-breakdown-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* 苹果小胶囊徽章 */
+    .apple-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    /* 平滑入场渐变 */
+    .reveal-elem {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-elem.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 苹果经典蓝色链接 */
+    .apple-link-btn {
+      color: #38bdf8;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+    .apple-link-btn:hover {
+      color: #7dd3fc;
+      transform: translateX(2px);
+    }
+  </style>
+</head>
+<body class="bg-black text-[#f5f5f7]">
+
+  <!-- ═══ 苹果经典微光顶栏 ═══ -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-black/75 border-b border-white/[0.08]">
+    <div class="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between text-xs font-normal">
+      <a href="#top" class="text-white font-semibold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-rose-400 shadow-[0_0_10px_#38bdf8]"></span>
+        <span>Yasin 郭岳兴</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[#86868b]">
+        <a href="#red-blue" class="hover:text-white transition-colors">红蓝双核拆解</a>
+        <a href="#ai-cluster" class="hover:text-white transition-colors">AI Agent 拓扑</a>
+        <a href="#quant" class="hover:text-white transition-colors">量化数据引擎</a>
+        <a href="#manifesto" class="hover:text-white transition-colors">操盘哲学</a>
+      </nav>
+
+      <div>
+        <a href="#contact" class="px-4 py-1.5 rounded-full bg-white text-black font-semibold hover:bg-neutral-200 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.25)]">
+          预约验证
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ 主界面内容 ═══ -->
+  <main class="pt-16 pb-24 space-y-28">
+
+    <!-- ═══ 01. 巨幕 HERO：流光大片开场 ═══ -->
+    <section id="top" class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+      <div class="apple-breakdown-card w-full min-h-[82vh] flex flex-col justify-between p-8 sm:p-14 lg:p-16 relative">
+        
+        <!-- 背景流光超高清大片 -->
+        <div class="absolute inset-0 z-0">
+          <img src="assets/vibrant_hero.jpg" alt="Vibrant Radiant Ribbon" class="w-full h-full object-cover object-center opacity-70 transform scale-105 hover:scale-100 transition-transform duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+        </div>
+
+        <!-- 顶栏状态 -->
+        <div class="relative z-10 flex flex-wrap items-center justify-between gap-4">
+          <div class="apple-pill text-white/90">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span>18 年一线电商实操 · 华工计算机 · AI Agent 商业化</span>
+          </div>
+          <span class="text-xs font-mono text-white/50 hidden sm:inline">DECISION ENGINE 2026</span>
+        </div>
+
+        <!-- 巨幅文字与行动 -->
+        <div class="relative z-10 max-w-3xl mt-24">
+          <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-6">
+            决策。<br />
+            <span class="gradient-text-aurora">不靠感觉。</span>
+          </h1>
+
+          <p class="text-lg sm:text-2xl font-normal text-slate-300 leading-relaxed mb-8 max-w-2xl">
+            18 年实战沉淀，年销 5000 万实打实兑现。<br class="hidden sm:inline" />
+            以严苛的<span class="text-white font-semibold">红蓝对抗双核体系</span>与<span class="text-white font-semibold">自主 AI Agent 矩阵</span>，将商业直觉淬炼为确定性。
+          </p>
+
+          <div class="flex flex-wrap items-center gap-6">
+            <a href="#red-blue" class="px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              <span>解构红蓝双核</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <a href="#contact" class="apple-link-btn text-lg">
+              <span>立即对谈验证 ›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 底部数据标尺 -->
+        <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10 mt-12 text-center">
+          <div>
+            <div class="text-4xl sm:text-5xl font-black text-cyan-400">18<span class="text-sm font-normal text-white ml-1">年</span></div>
+            <div class="text-xs text-slate-400 mt-1">跨周期一线实操</div>
+          </div>
+          <div>
+            <div class="text-4xl sm:text-5xl font-black text-rose-400">5000<span class="text-sm font-normal text-white ml-1">万</span></div>
+            <div class="text-xs text-slate-400 mt-1">连续多年年销兑现</div>
+          </div>
+          <div>
+            <div class="text-4xl sm:text-5xl font-black text-purple-400">80<span class="text-sm font-normal text-white ml-1">%</span></div>
+            <div class="text-xs text-slate-400 mt-1">AI 自动化工作流释放</div>
+          </div>
+          <div>
+            <div class="text-4xl sm:text-5xl font-black text-amber-400">7<span class="text-sm font-normal text-white ml-1">大</span></div>
+            <div class="text-xs text-slate-400 mt-1">全天候协同 Agent</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 02. 红蓝对抗双核架构拆解 ═══ -->
+    <section id="red-blue" class="max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-14">
+      
+      <div class="reveal-elem max-w-3xl mb-12">
+        <div class="apple-pill text-cyan-400 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          <span>CORE ENGINE BREAKDOWN · 架构剖面拆解</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-4">
+          红蓝双核决策架构。<br />
+          <span class="gradient-text-aurora">一套破局，一套保命。</span>
+        </h2>
+        <p class="text-lg text-slate-400 leading-relaxed font-normal">
+          拒绝拍脑袋碰运气。任何新项目在真金白银投入前，必须通过完全独立的蓝核机会激发与红核极寒致死压力测试。
+        </p>
+      </div>
+
+      <!-- 核心硬件拆解大卡片 -->
+      <div class="apple-breakdown-card p-6 sm:p-12 mb-8">
+        
+        <!-- 巨幅工业拆解剖面大图 -->
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-10 group">
+          <img src="assets/red_blue_core.jpg" alt="Red Blue Dual Core Processor Breakdown" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700" />
+          <div class="absolute bottom-4 left-6 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-mono text-slate-300">
+            DUAL-CORE PARALLEL ARBITRATION ARCHITECTURE // 4K 工业剖面拆解
+          </div>
+        </div>
+
+        <!-- 蓝方核 VS 红方核 引线式详细拆解 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- 蓝方计算核 -->
+          <div class="p-8 rounded-3xl bg-blue-950/20 border border-cyan-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">01. BLUE HYPOTHESIS CORE</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono">机会进攻核</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">探寻 10 倍非共识缝隙</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+              扫描全网海量交易数据、寻找月结算破百万的低粉黑马达人；结构化提炼前 3 秒黄金钩子文案与高转化货盘，用 AI Agent 赋能极简团队放大 10 倍人效。
+            </p>
+            <ul class="text-xs font-mono text-cyan-200/80 space-y-2 border-t border-cyan-500/20 pt-4">
+              <li>• 低粉高销黑马达人漏洞捕捉</li>
+              <li>• 爆款出片前 3 秒黄金脚本 SOP</li>
+              <li>• 流量溢出与高毛利杠杆测算</li>
+            </ul>
+          </div>
+
+          <!-- 红方防御核 -->
+          <div class="p-8 rounded-3xl bg-rose-950/20 border border-rose-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider">02. RED SENTINEL CORE</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/10 text-rose-300 text-xs font-mono">致死防御核</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">极限施压与漏洞审查</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+              站在极寒与对手视角往死里挑刺：严刑拷打真实退货率损耗、供应链破损率、账期延宕与挤兑风险、平台规则红线。在投入真金白银前消灭所有致命死法。
+            </p>
+            <ul class="text-xs font-mono text-rose-200/80 space-y-2 border-t border-rose-500/20 pt-4">
+              <li>• 退货率陷阱与供应链品控压力测</li>
+              <li>• 现金流断裂周期极限定量推演</li>
+              <li>• 平台合规底线与封禁风控预案</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- 六分身立体打分条 -->
+        <div class="mt-8 p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-xs font-mono text-slate-300">
+            <span class="text-white font-bold">六分身并行仲裁体系：</span>
+            <span>产品交付 · 技术壁垒 · 财务安全 · 营销飞轮 · 运营SOP · 合规红线</span>
+          </div>
+          <span class="text-xs font-mono px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-rose-500/20 border border-white/20 text-white">
+            100% 拒绝凭感觉
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ═══ 03. AI Agent 矩阵神经网络拓扑拆解 ═══ -->
+    <section id="ai-cluster" class="max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-14">
+      
+      <div class="reveal-elem max-w-3xl mb-12">
+        <div class="apple-pill text-purple-400 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+          <span>NEURAL CLUSTER TOPOLOGY · 协同拓扑拆解</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-4">
+          一人即军团。<br />
+          <span class="gradient-text-aurora">7 大自治 Agent 协同拓扑。</span>
+        </h2>
+        <p class="text-lg text-slate-400 leading-relaxed font-normal">
+          把 18 年电商老兵的操盘经验代码化。不是零散的聊天机器工具，而是具备独立职责、全天候自主心跳交互的商业集群。
+        </p>
+      </div>
+
+      <!-- 神经网络晶圆拆解大图卡片 -->
+      <div class="apple-breakdown-card p-6 sm:p-12 mb-8">
+        
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-10 group">
+          <img src="assets/agent_cluster.jpg" alt="7 AI Agent Cluster Architecture" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700" />
+          <div class="absolute bottom-4 left-6 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-mono text-purple-300">
+            7-NODE AUTONOMOUS AGENT MESH // 光纤脉冲神经拓扑图
+          </div>
+        </div>
+
+        <!-- 7 大节点功能拆解网格 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-mono">
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-cyan-500/25">
+            <div class="text-cyan-400 font-bold mb-1">01. 盯盘 Agent (Radar)</div>
+            <div class="text-slate-400">大盘/竞品异动毫秒级感知，自动调价与阈值告警</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-purple-500/25">
+            <div class="text-purple-400 font-bold mb-1">02. 选品 Agent (Miner)</div>
+            <div class="text-slate-400">自动深筛 3C/美妆/鞋包起量黑马，彻底过滤伪爆款</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-rose-500/25">
+            <div class="text-rose-400 font-bold mb-1">03. 脚本 Agent (Copywriter)</div>
+            <div class="text-slate-400">批量结构化输出黄金 3 秒钩子文案与高转化话术</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-amber-500/25">
+            <div class="text-amber-400 font-bold mb-1">04. 客服 Agent (SaaS)</div>
+            <div class="text-slate-400">服小助企业级知识库毫秒级响应，夜间转化提升 40%</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-emerald-500/25">
+            <div class="text-emerald-400 font-bold mb-1">05. 工作流 Agent (Flow)</div>
+            <div class="text-slate-400">跨平台订单履约、自动分发与出片排期全自动化</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-blue-500/25">
+            <div class="text-blue-400 font-bold mb-1">06. 算账 Agent (Auditor)</div>
+            <div class="text-slate-400">多维度实时毛利精算、退货损耗追踪与资金周转看板</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ═══ 04. 量化数据工程爆炸拆解 ═══ -->
+    <section id="quant" class="max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-14">
+      
+      <div class="reveal-elem max-w-3xl mb-12">
+        <div class="apple-pill text-emerald-400 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>EXPLODED QUANT ENGINE · 爆炸工程拆解</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-4">
+          量化选股。<br />
+          <span class="gradient-text-emerald">纯数据工程，战胜贪婪。</span>
+        </h2>
+        <p class="text-lg text-slate-400 leading-relaxed font-normal">
+          Kronos 深度时序模型 + 9 维动量技术指标 + 主力资金流向。早盘 09:25 纯算法决断，收盘自进化权重，不掺杂任何情绪噪音。
+        </p>
+      </div>
+
+      <!-- 爆炸拆解大卡片 -->
+      <div class="apple-breakdown-card p-6 sm:p-12 mb-8">
+        
+        <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-10 group">
+          <img src="assets/quant_exploded.jpg" alt="Quantitative Engine 3D Exploded View" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700" />
+          <div class="absolute bottom-4 left-6 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-mono text-emerald-300">
+            3D EXPLODED ANALYTICS MODULE // 9-D 多因子精密爆炸图
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center font-mono">
+          <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+            <div class="text-3xl font-black text-emerald-400">09:25</div>
+            <div class="text-xs text-slate-400 mt-1">开盘前全自动完成选拔</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+            <div class="text-3xl font-black text-cyan-400">Top-8</div>
+            <div class="text-xs text-slate-400 mt-1">多因子融合高确定性推荐</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+            <div class="text-3xl font-black text-rose-400">0 情绪</div>
+            <div class="text-xs text-slate-400 mt-1">铁血执行止损纪律</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ═══ 05. 操盘哲学与核心底色 (The Manifesto) ═══ -->
+    <section id="manifesto" class="max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-14">
+      
+      <div class="apple-breakdown-card p-8 sm:p-14 lg:p-16">
+        
+        <!-- 极简有力的苹果式标题排版 -->
+        <div class="max-w-3xl mb-10">
+          <div class="apple-pill text-cyan-400 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span>03 / THE PHILOSOPHY · 操盘底色</span>
+          </div>
+          <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-3">
+            不靠运气。<span class="gradient-text-aurora">靠体系。</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-400 font-normal">
+            18 年穿越周期，把算法的确定性注入每一次商业决策。
+          </p>
+        </div>
+
+        <!-- 三大底色支柱 (紧凑精炼卡片) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          <div class="p-6 rounded-3xl bg-white/[0.03] border border-white/[0.08] hover:border-cyan-500/40 transition-colors">
+            <div class="text-xs font-mono font-bold text-cyan-400 mb-1.5">01 · 计算机理学底色</div>
+            <h3 class="text-xl font-bold text-white mb-2">架构思维</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              华南理工计算机背景。以软件工程的模块化、可复用与自纠偏逻辑，降维解构商业运营的混沌变量。
+            </p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white/[0.03] border border-white/[0.08] hover:border-rose-500/40 transition-colors">
+            <div class="text-xs font-mono font-bold text-rose-400 mb-1.5">02 · 跨周期实战操盘</div>
+            <h3 class="text-xl font-bold text-white mb-2">千万级兑现</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              18 年一线摸爬滚打，连续多年年销 5000 万实打实验证，深谙供应链断裂点与资金周转死穴。
+            </p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white/[0.03] border border-purple-500/40 transition-colors">
+            <div class="text-xs font-mono font-bold text-purple-400 mb-1.5">03 · AI 商业化现役</div>
+            <h3 class="text-xl font-bold text-white mb-2">闭环自研</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              持续自研 7 大业务协同 Agent 与多因子时序量化模型，不断拓宽一人公司的人效极限与盈利边界。
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 总结声明条 -->
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono text-slate-400">
+          <div>YASIN GUO · <span class="text-white">在死局里保命，在风口上放量。</span></div>
+          <div class="text-cyan-400 font-semibold">100% 拒绝凭直觉</div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ═══ 06. 预约与对谈 (Call to Action) ═══ -->
+    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 text-center py-12 scroll-mt-14">
+      
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-4">
+          有重大决策要验证？<br />
+          <span class="gradient-text-aurora">让我们聊聊。</span>
+        </h2>
+
+        <p class="text-base sm:text-xl text-slate-400 leading-relaxed mb-10 font-normal">
+          每一个商业决策都值得被红蓝双方严厉拷打一遍。<br class="hidden sm:inline" />
+          无论是寻求深度对谈、顾问咨询还是合伙探索，欢迎直接联络。
+        </p>
+
+        <!-- 极简大气联系按钮组 (直接沟通，去除了繁琐的二维码占位) -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          
+          <!-- 电话 / 微信同号直联 -->
+          <a href="tel:13184841049" class="px-8 py-4 rounded-full bg-white text-black font-bold text-sm hover:bg-neutral-200 transition-all flex items-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span>13184841049</span>
+            <span class="text-xs text-neutral-500 font-normal">[电话 / 微信同号]</span>
+          </a>
+
+          <!-- 一键复制邮箱 -->
+          <button id="copyEmail" class="px-8 py-4 rounded-full bg-[#18181b] text-white border border-white/20 font-semibold text-sm hover:bg-[#27272a] transition-all flex items-center gap-3 shadow-lg">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span>guoyuexing@163.com</span>
+            <span class="text-xs text-slate-400 font-normal">[一键复制]</span>
+          </button>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ═══ 极简黑底页脚 ═══ -->
+  <footer class="border-t border-white/[0.08] py-8 text-xs text-slate-500 bg-black">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        Copyright © 2008–2026 <span class="text-white font-bold">Yasin 郭岳兴</span>. All rights reserved.
+      </div>
+      <div class="flex items-center gap-6">
+        <span>华南理工大学计算机 2008</span>
+        <a href="#top" class="hover:text-white transition-colors">回到顶部 ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ 复制反馈 Toast ═══ -->
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-5 py-2.5 rounded-full bg-white text-black text-xs font-bold shadow-2xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+    <span>✓ 邮箱已复制到剪贴板</span>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-elem, .apple-breakdown-card').forEach(el => {
+      el.classList.add('reveal-elem');
+      observer.observe(el);
+    });
+
+    const copyBtn = document.getElementById('copyEmail');
+    const toast = document.getElementById('toast');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('guoyuexing@163.com').then(() => {
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+        toast.classList.add('-translate-y-2');
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none');
+          toast.classList.remove('-translate-y-2');
+        }, 2200);
+      });
+    });
+  </script>
+</body>
+</html>
